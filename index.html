@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="Plataforma Integrada para o Combate Global à Fome - Dados, Coordenação, Ação e Monitoramento.">
+    <meta name="keywords" content="fome zero, segurança alimentar, ODS, ajuda humanitária, doação, voluntariado, logística alimentar, dados fome, combate à fome">
+    <meta name="author" content="Sistema Global de Combate à Fome (SGCF)">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://maps.googleapis.com">
+    <link rel="prefetch" href="/assets/scripts/core-interaction-bundle.js" as="script">
+    <link rel="prefetch" href="/assets/styles/main-theme.css" as="style">
+
+    <title>SGCF - Sistema Global de Combate à Fome</title>
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <meta property="og:title" content="SGCF - Sistema Global de Combate à Fome">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.sgcf-nao-real.org/">
+    <meta property="og:image" content="https://www.sgcf-nao-real.org/assets/images/og-image.jpg">
+    <meta property="og:description" content="Junte-se à luta contra a fome mundial. Acompanhe dados, apoie projetos e coordene ações.">
+
+</head>
+<body class="theme-light page-dashboard" data-system-status="operational" data-user-role="guest">
+
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header class="site-header" id="main-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-container container-fluid">
+            <div class="header-branding">
+                <a href="/" class="logo-link" aria-label="Página Inicial do SGCF">
+                    <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" role="img" aria-labelledby="logoTitle">
+                        <title id="logoTitle">Logotipo SGCF</title>
+                        <rect width="100" height="40" fill="#cccccc"/>
+                        <text x="10" y="25" font-family="Arial" font-size="12" fill="#333333">SGCF Logo</text>
+                    </svg>
+                    <span class="site-title" itemprop="name">SGCF</span>
+                </a>
+                <p class="site-tagline" itemprop="description">Combatendo a Fome, Juntos.</p>
+            </div>
+
+            <nav class="main-navigation" id="primary-navigation" role="navigation" aria-label="Navegação Principal">
+                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Abrir menu principal">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <ul class="menu primary-menu" id="primary-menu">
+                    <li class="menu-item current-menu-item" data-nav-section="dashboard">
+                        <a href="#dashboard" aria-current="page">Painel Global</a>
+                    </li>
+                    <li class="menu-item has-submenu" data-nav-section="data">
+                        <a href="#data-hub" aria-haspopup="true" aria-expanded="false">Dados & Insights</a>
+                        <ul class="sub-menu" role="menu">
+                            <li class="menu-item" role="none"><a href="#data-map" role="menuitem">Mapa da Fome</a></li>
+                            <li class="menu-item" role="none"><a href="#reports" role="menuitem">Relatórios Detalhados</a></li>
+                            <li class="menu-item has-submenu" role="none">
+                                <a href="#statistics" aria-haspopup="true" aria-expanded="false" role="menuitem">Estatísticas</a>
+                                <ul class="sub-sub-menu" role="menu">
+                                     <li role="none"><a href="#stats-region" role="menuitem">Por Região</a></li>
+                                     <li role="none"><a href="#stats-cause" role="menuitem">Por Causa</a></li>
+                                     <li role="none"><a href="#stats-trends" role="menuitem">Tendências Históricas</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item" role="none"><a href="#api-access" role="menuitem">API de Dados</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu" data-nav-section="action">
+                        <a href="#action-center" aria-haspopup="true" aria-expanded="false">Centro de Ação</a>
+                         <ul class="sub-menu" role="menu">
+                            <li class="menu-item" role="none"><a href="#donate" role="menuitem">Doar Recursos</a></li>
+                            <li class="menu-item" role="none"><a href="#volunteer" role="menuitem">Voluntariado</a></li>
+                            <li class="menu-item" role="none"><a href="#projects" role="menuitem">Projetos Ativos</a></li>
+                            <li class="menu-item" role="none"><a href="#partners" role="menuitem">Organizações Parceiras</a></li>
+                         </ul>
+                    </li>
+                    <li class="menu-item" data-nav-section="logistics">
+                        <a href="#logistics-coordination">Logística</a>
+                    </li>
+                     <li class="menu-item" data-nav-section="about">
+                        <a href="#about-sgcf">Sobre o SGCF</a>
+                    </li>
+                     <li class="menu-item" data-nav-section="contact">
+                        <a href="#contact">Contato</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header-user-area">
+                <div class="user-status" data-logged-in="false">
+                    <a href="#login" class="btn btn-secondary btn-sm">Login</a>
+                    <a href="#register" class="btn btn-primary btn-sm">Registrar</a>
+                </div>
+                <div class="header-search-container">
+                     <form action="/search" method="get" role="search" class="header-search-form">
+                        <label for="header-search-input" class="visually-hidden">Pesquisar no site</label>
+                        <input type="search" id="header-search-input" name="q" placeholder="Pesquisar..." class="search-input">
+                        <button type="submit" class="search-submit" aria-label="Enviar pesquisa">
+                            <svg class="icon-search" viewBox="0 0 24 24"><path d="..."></path></svg>
+                        </button>
+                     </form>
+                </div>
+                 <div class="language-switcher">
+                     <button class="lang-current" aria-haspopup="true" aria-expanded="false" aria-label="Selecionar idioma, idioma atual Português Brasileiro">
+                         <span class="lang-flag">🇧🇷</span> PT-BR
+                     </button>
+                     <ul class="lang-list">
+                        <li><a href="?lang=en-US" hreflang="en-US" lang="en-US">🇺🇸 English</a></li>
+                        <li><a href="?lang=es-ES" hreflang="es-ES" lang="es-ES">🇪🇸 Español</a></li>
+                        <li><a href="?lang=fr-FR" hreflang="fr-FR" lang="fr-FR">🇫🇷 Français</a></li>
+                     </ul>
+                 </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" role="main" itemprop="mainContentOfPage">
+
+        <section id="dashboard" class="main-section dashboard-section" aria-labelledby="dashboard-title" data-section-type="overview">
+            <header class="section-header">
+                <h1 id="dashboard-title" class="section-title">Painel Global da Fome</h1>
+                <p class="section-subtitle">Visão geral da situação atual, alertas e necessidades urgentes.</p>
+                 <div class="section-controls">
+                    <label for="dashboard-date-filter">Filtrar por Data:</label>
+                    <input type="date" id="dashboard-date-filter" name="dashboard_date" value="2025-05-12">
+                     <button class="btn btn-refresh" data-action="refresh-dashboard">Atualizar Dados</button>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <article class="dashboard-widget map-widget" id="widget-map" data-widget-type="geo-spatial" aria-labelledby="map-widget-title">
+                    <header class="widget-header">
+                        <h2 id="map-widget-title" class="widget-title">Mapa Interativo da Fome</h2>
+                         <div class="widget-controls">
+                            <button data-map-layer="severity">Severidade</button>
+                            <button data-map-layer="population">Pop. Afetada</button>
+                         </div>
+                    </header>
+                    <div class="widget-content">
+                        <div id="interactive-map-container" class="map-container" style="height: 400px; background: #e0e0e0;" role="application" aria-roledescription="Mapa interativo mostrando níveis de insegurança alimentar globalmente">
+                            <p>Carregando mapa...</p>
+                            </div>
+                        <div class="map-legend" id="map-legend-container">
+                            <p>Legenda:</p>
+                             <ul>
+                                 <li><span class="legend-color" style="background-color: green;"></span> Nível Baixo</li>
+                                 <li><span class="legend-color" style="background-color: yellow;"></span> Nível Moderado</li>
+                                 <li><span class="legend-color" style="background-color: orange;"></span> Nível Alto</li>
+                                 <li><span class="legend-color" style="background-color: red;"></span> Nível Crítico</li>
+                             </ul>
+                        </div>
+                    </div>
+                    <footer class="widget-footer">
+                        <small>Dados atualizados: <time datetime="2025-05-12T08:00:00Z">12 de Maio de 2025, 08:00 GMT</time></small>
+                        <a href="#data-hub" class="widget-link">Ver dados detalhados</a>
+                    </footer>
+                </article>
+
+                <article class="dashboard-widget stats-widget" id="widget-stats" data-widget-type="summary-kpi" aria-labelledby="stats-widget-title">
+                    <header class="widget-header">
+                        <h2 id="stats-widget-title" class="widget-title">Estatísticas Chave</h2>
+                    </header>
+                    <div class="widget-content">
+                        <dl class="key-stats-list">
+                            <div class="stat-item" data-stat-id="global-hunger-index">
+                                <dt>Índice Global da Fome (Proj.):</dt>
+                                <dd>
+                                    <span class="stat-value">18.2</span>
+                                    <span class="stat-trend" data-trend="stable"> (Estável)</span>
+                                    <meter id="hunger-meter" min="0" max="100" low="10" high="35" optimum="0" value="18.2" title="Nível atual: Moderado"></meter>
+                                </dd>
+                            </div>
+                            <div class="stat-item" data-stat-id="people-affected">
+                                <dt>Pessoas em Insegurança Alimentar Aguda:</dt>
+                                <dd><span class="stat-value">811 Milhões</span> <span class="stat-trend" data-trend="up"> (Aumento)</span></dd>
+                            </div>
+                            <div class="stat-item" data-stat-id="funding-gap">
+                                <dt>Lacuna de Financiamento (Estimada):</dt>
+                                <dd>
+                                    <span class="stat-value">$7.3 Bilhões</span>
+                                    <progress id="funding-progress" max="100" value="65" title="65% da meta atingida"></progress>
+                                    <label for="funding-progress" class="visually-hidden">Progresso da meta de financiamento: 65%</label>
+                                </dd>
+                            </div>
+                            <div class="stat-item" data-stat-id="active-projects">
+                                <dt>Projetos Ativos SGCF:</dt>
+                                <dd><span class="stat-value">1,245</span></dd>
+                            </div>
+                        </dl>
+                    </div>
+                     <footer class="widget-footer">
+                        <a href="#statistics" class="widget-link">Ver todas as estatísticas</a>
+                    </footer>
+                </article>
+
+                <article class="dashboard-widget alerts-widget" id="widget-alerts" data-widget-type="notifications" aria-labelledby="alerts-widget-title">
+                    <header class="widget-header">
+                         <h2 id="alerts-widget-title" class="widget-title">Alertas Urgentes</h2>
+                         <span class="badge badge-danger" title="Número de alertas críticos">3 Críticos</span>
+                    </header>
+                    <div class="widget-content">
+                        <ul class="alert-list">
+                            <li class="alert-item critical" data-alert-id="ALERT001" data-region="Sahel">
+                                <strong class="alert-region">Sahel:</strong> Seca severa impacta colheitas. Necessidade imediata de <a href="#donate?type=food&region=Sahel">ajuda alimentar</a> e <a href="#donate?type=water&region=Sahel">água</a>. <time datetime="2025-05-10"> (2 dias atrás)</time>
+                            </li>
+                            <li class="alert-item high" data-alert-id="ALERT002" data-region="Yemen">
+                                <strong class="alert-region">Iêmen:</strong> Acesso humanitário restrito. <a href="#volunteer?skill=logistics&region=Yemen">Voluntários de logística</a> urgentemente necessários. <time datetime="2025-05-09"> (3 dias atrás)</time>
+                            </li>
+                            <li class="alert-item critical" data-alert-id="ALERT003" data-region="HornAfrica">
+                                <strong class="alert-region">Chifre da África:</strong> Surto de Gafanhotos do Deserto. Risco iminente para segurança alimentar. <a href="#projects?id=PROJAFR05">Apoie o projeto de controle</a>. <time datetime="2025-05-11"> (Ontem)</time>
+                            </li>
+                             <li class="alert-item medium" data-alert-id="ALERT004" data-region="CentralAmerica">
+                                <strong class="alert-region">América Central:</strong> Impacto pós-furacão nas lavouras. Necessidade de <a href="#donate?type=seeds&region=CentralAmerica">sementes resistentes</a>. <time datetime="2025-05-05"> (1 semana atrás)</time>
+                            </li>
+                        </ul>
+                    </div>
+                    <footer class="widget-footer">
+                        <a href="#alerts-history" class="widget-link">Ver histórico de alertas</a>
+                    </footer>
+                </article>
+            </div>
+        </section>
+
+        <section id="data-hub" class="main-section data-section" aria-labelledby="data-hub-title" data-section-type="data-analysis">
+            <header class="section-header">
+                <h2 id="data-hub-title" class="section-title">Hub de Dados e Relatórios</h2>
+                <p class="section-subtitle">Análises aprofundadas, estatísticas detalhadas e acesso a dados brutos.</p>
+            </header>
+
+            <div class="data-content-wrapper">
+                <article class="data-subsection" id="regional-data-table" aria-labelledby="regional-data-title">
+                    <h3 id="regional-data-title">Dados por Região</h3>
+                    <div class="table-controls">
+                        <select id="sort-region-column" aria-label="Ordenar coluna por">
+                            <option value="region">Região</option>
+                            <option value="severity_index">Índice de Severidade</option>
+                            <option value="population_affected">População Afetada</option>
+                        </select>
+                        <input type="text" id="filter-region-name" placeholder="Filtrar por nome da região..." aria-label="Filtrar por nome da região">
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table complex-table" aria-describedby="regional-data-title">
+                            <caption>Tabela de Insegurança Alimentar por Região (Q1 2025)</caption>
+                            <colgroup>
+                                <col style="width: 25%;">
+                                <col style="width: 15%;">
+                                <col style="width: 20%;">
+                                <col style="width: 20%;">
+                                <col style="width: 20%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col" aria-sort="ascending">Região</th>
+                                    <th scope="col" class="numeric">Índice Severidade (0-50)</th>
+                                    <th scope="col" class="numeric">Pop. Afetada (Milhões)</th>
+                                    <th scope="col">Principais Causas</th>
+                                    <th scope="col">Tendência (vs Q4 2024)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-region-id="AFR-SAH">
+                                    <th scope="row">África Subsaariana - Sahel</th>
+                                    <td class="numeric" data-value="38.5">38.5 <span class="severity-level critical">(Crítico)</span></td>
+                                    <td class="numeric" data-value="150.2">150.2</td>
+                                    <td>Conflito, Mudanças Climáticas (Seca)</td>
+                                    <td><span class="trend-indicator increase">Aumento Significativo</span></td>
+                                </tr>
+                                <tr data-region-id="ASIA-SE">
+                                    <th scope="row">Sudeste Asiático</th>
+                                    <td class="numeric" data-value="15.1">15.1 <span class="severity-level moderate">(Moderado)</span></td>
+                                    <td class="numeric" data-value="65.8">65.8</td>
+                                    <td>Pobreza, Eventos Climáticos Extremos</td>
+                                    <td><span class="trend-indicator stable">Estável</span></td>
+                                </tr>
+                                <tr data-region-id="LATAM-CA">
+                                     <th scope="row">América Latina - Central</th>
+                                     <td class="numeric" data-value="22.0">22.0 <span class="severity-level high">(Alto)</span></td>
+                                     <td class="numeric" data-value="30.5">30.5</td>
+                                     <td>Impacto Econômico, Desastres Naturais</td>
+                                     <td><span class="trend-indicator slight-increase">Leve Aumento</span></td>
+                                </tr>
+                                <tr data-region-id="MENA">
+                                    <th scope="row">Oriente Médio e Norte da África</th>
+                                    <td class="numeric" data-value="28.9">28.9 <span class="severity-level high">(Alto)</span></td>
+                                    <td class="numeric" data-value="55.1">55.1</td>
+                                    <td>Conflito, Escassez de Água</td>
+                                    <td><span class="trend-indicator increase">Aumento</span></td>
+                                </tr>
+                            </tbody>
+                             <tfoot>
+                                <tr>
+                                    <th scope="row" colspan="2">Média Global (Ponderada)</th>
+                                    <td class="numeric">~811 Milhões</td>
+                                    <td colspan="2"><small>Nota: Dados preliminares sujeitos a revisão.</small></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </article>
+
+                 <article class="data-subsection" id="data-visualizations" aria-labelledby="viz-title">
+                    <h3 id="viz-title">Visualizações de Dados</h3>
+                    <div class="visualization-gallery">
+                        <figure class="viz-item" data-viz-type="trend-chart">
+                             <figcaption>Tendência Global da Fome (2000-2025)</figcaption>
+                             <div class="chart-placeholder" id="global-trend-chart" style="height: 250px; background: #e8e8e8;">
+                                 <p>Carregando gráfico de tendências...</p>
+                             </div>
+                             <button data-action="export-chart" data-chart-id="global-trend-chart">Exportar Gráfico</button>
+                        </figure>
+                         <figure class="viz-item" data-viz-type="causal-pie-chart">
+                             <figcaption>Distribuição das Causas da Fome (Global)</figcaption>
+                             <div class="chart-placeholder" id="causes-pie-chart" style="height: 250px; background: #e8e8e8;">
+                                 <p>Carregando gráfico de pizza...</p>
+                             </div>
+                              <button data-action="export-chart" data-chart-id="causes-pie-chart">Exportar Gráfico</button>
+                        </figure>
+                        </div>
+                </article>
+
+                 <article class="data-subsection" id="api-access" aria-labelledby="api-title">
+                     <h3 id="api-title">Acesso a Dados e Downloads</h3>
+                     <p>Acesse nossos dados brutos via API ou faça download de relatórios completos.</p>
+                     <div class="api-info">
+                         <h4>API RESTful</h4>
+                         <p>Endpoint base: <code>https://api.sgcf-nao-real.org/v1/data</code></p>
+                         <p>Consulte a <a href="/docs/api">documentação da API</a> para detalhes sobre autenticação e endpoints disponíveis (e.g., <code>/regions</code>, <code>/indicators</code>, <code>/alerts</code>).</p>
+                         <button class="btn btn-secondary" data-action="request-api-key">Solicitar Chave de API</button>
+                     </div>
+                     <div class="download-section">
+                         <h4>Relatórios para Download</h4>
+                         <ul>
+                            <li><a href="/downloads/report-q1-2025.pdf" download>Relatório Completo Q1 2025 (PDF, 15MB)</a></li>
+                            <li><a href="/downloads/regional-data-q1-2025.csv" download>Dados Regionais Q1 2025 (CSV, 2MB)</a></li>
+                            <li><a href="/downloads/methodology-report.pdf" download>Relatório de Metodologia (PDF, 5MB)</a></li>
+                         </ul>
+                     </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="action-center" class="main-section action-section" aria-labelledby="action-center-title" data-section-type="engagement">
+             <header class="section-header">
+                <h2 id="action-center-title" class="section-title">Centro de Ação: Faça a Diferença</h2>
+                <p class="section-subtitle">Doe, seja voluntário, apoie projetos e veja o impacto das suas ações.</p>
+            </header>
+
+            <div class="action-tabs-container">
+                <ul class="action-tabs" role="tablist">
+                    <li role="presentation"><button role="tab" id="tab-donate" aria-controls="panel-donate" aria-selected="true">Doar</button></li>
+                    <li role="presentation"><button role="tab" id="tab-volunteer" aria-controls="panel-volunteer" aria-selected="false">Voluntariado</button></li>
+                    <li role="presentation"><button role="tab" id="tab-projects" aria-controls="panel-projects" aria-selected="false">Projetos</button></li>
+                </ul>
+
+                <div id="panel-donate" class="action-panel" role="tabpanel" aria-labelledby="tab-donate" tabindex="0">
+                    <h3>Faça uma Doação</h3>
+                    <form id="donation-form" class="complex-form" action="/process-donation" method="post" novalidate>
+                        <fieldset>
+                            <legend>Tipo de Doação</legend>
+                            <div class="form-group radio-group">
+                                <input type="radio" id="donate-money" name="donation_type" value="money" checked required>
+                                <label for="donate-money">Doação Monetária</label>
+                                <input type="radio" id="donate-goods" name="donation_type" value="goods" required>
+                                <label for="donate-goods">Doação de Bens (Alimentos, Suprimentos)</label>
+                                <input type="radio" id="donate-time" name="donation_type" value="time" required>
+                                <label for="donate-time">Doação de Tempo (Ver Voluntariado)</label>
+                            </div>
+                        </fieldset>
+
+                        <fieldset id="money-donation-fields">
+                             <legend>Detalhes da Doação Monetária</legend>
+                             <div class="form-group">
+                                <label for="donation-amount">Valor (R$):</label>
+                                <input type="number" id="donation-amount" name="amount" min="5" step="1" required placeholder="Ex: 50">
+                                <div class="preset-amounts">
+                                    <button type="button" data-amount="25">R$25</button>
+                                    <button type="button" data-amount="50">R$50</button>
+                                    <button type="button" data-amount="100">R$100</button>
+                                    <button type="button" data-amount="250">R$250</button>
+                                </div>
+                             </div>
+                            <div class="form-group">
+                                <label for="donation-frequency">Frequência:</label>
+                                <select id="donation-frequency" name="frequency">
+                                    <option value="single">Doação Única</option>
+                                    <option value="monthly">Mensal</option>
+                                    <option value="quarterly">Trimestral</option>
+                                    <option value="annual">Anual</option>
+                                </select>
+                            </div>
+                             <div class="form-group">
+                                <label for="donation-designation">Destinação (Opcional):</label>
+                                <select id="donation-designation" name="designation">
+                                    <option value="general">Fundo Geral (Maior Necessidade)</option>
+                                    <option value="emergency">Resposta a Emergências</option>
+                                    <option value="region-sahel">Região do Sahel</option>
+                                    <option value="project-school-feeding">Projeto Alimentação Escolar</option>
+                                    </select>
+                            </div>
+                             <div class="form-group payment-methods">
+                                <label>Método de Pagamento:</label>
+                                <div><input type="radio" name="payment_method" value="credit_card" id="pay-cc"><label for="pay-cc"> Cartão de Crédito</label></div>
+                                <div><input type="radio" name="payment_method" value="paypal" id="pay-paypal"><label for="pay-paypal"> PayPal</label></div>
+                                <div><input type="radio" name="payment_method" value="pix" id="pay-pix"><label for="pay-pix"> PIX</label></div>
+                                <div id="pix-details" style="display:none;">
+                                     <p>Chave PIX: <code class="copy-pix-key">chave-aleatoria-exemplo@sgcf.org</code> <button type="button">Copiar</button></p>
+                                </div>
+                             </div>
+                        </fieldset>
+
+                         <fieldset id="goods-donation-fields" style="display: none;">
+                             <legend>Detalhes da Doação de Bens</legend>
+                             <div class="form-group">
+                                <label for="goods-type">Tipo de Bem:</label>
+                                <select id="goods-type" name="goods_type">
+                                    <option value="non_perishable_food">Alimentos Não Perecíveis</option>
+                                    <option value="hygiene_kits">Kits de Higiene</option>
+                                    <option value="medical_supplies">Suprimentos Médicos</option>
+                                    <option value="other">Outro (Descrever)</option>
+                                </select>
+                             </div>
+                             <div class="form-group">
+                                 <label for="goods-description">Descrição e Quantidade Estimada:</label>
+                                 <textarea id="goods-description" name="goods_description" rows="3" placeholder="Ex: 50kg de arroz, 20 caixas de leite em pó..."></textarea>
+                             </div>
+                              <div class="form-group">
+                                 <label for="goods-location">Localização dos Bens:</label>
+                                 <input type="text" id="goods-location" name="goods_location" placeholder="Cidade, Estado">
+                             </div>
+                             <p>Após o envio, nossa equipe de logística entrará em contato para coordenar a coleta ou entrega.</p>
+                        </fieldset>
+
+                        <fieldset>
+                             <legend>Informações do Doador (Opcional)</legend>
+                            <div class="form-group inline-fields">
+                                <div>
+                                    <label for="donor-name">Nome:</label>
+                                    <input type="text" id="donor-name" name="donor_name" autocomplete="name">
+                                </div>
+                                 <div>
+                                    <label for="donor-email">Email:</label>
+                                    <input type="email" id="donor-email" name="donor_email" autocomplete="email">
+                                 </div>
+                            </div>
+                             <div class="form-group">
+                                 <input type="checkbox" id="anonymous-donation" name="anonymous">
+                                 <label for="anonymous-donation">Desejo fazer a doação anonimamente</label>
+                             </div>
+                              <div class="form-group">
+                                 <input type="checkbox" id="newsletter-signup" name="newsletter" checked>
+                                 <label for="newsletter-signup">Desejo receber atualizações sobre o SGCF por email</label>
+                             </div>
+                        </fieldset>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-lg">Processar Doação Segura</button>
+                             <p class="form-security-notice">
+                                <svg class="icon-lock" viewBox="0 0 24 24"><path d="..."></path></svg>
+                                Transação segura e criptografada.
+                             </p>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="panel-volunteer" class="action-panel" role="tabpanel" aria-labelledby="tab-volunteer" tabindex="-1" hidden>
+                    <h3>Junte-se como Voluntário</h3>
+                     <p>Ofereça seu tempo e habilidades para apoiar nossas operações e projetos.</p>
+                     <form id="volunteer-form" class="complex-form" action="/process-volunteer" method="post">
+                        <fieldset>
+                            <legend>Informações Pessoais</legend>
+                             <div class="form-group">
+                                <label for="volunteer-name">Nome Completo:</label>
+                                <input type="text" id="volunteer-name" name="volunteer_name" required autocomplete="name">
+                            </div>
+                             <div class="form-group">
+                                <label for="volunteer-email">Email:</label>
+                                <input type="email" id="volunteer-email" name="volunteer_email" required autocomplete="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="volunteer-phone">Telefone (com DDD):</label>
+                                <input type="tel" id="volunteer-phone" name="volunteer_phone" autocomplete="tel">
+                            </div>
+                            <div class="form-group">
+                                <label for="volunteer-location">Cidade/Estado:</label>
+                                <input type="text" id="volunteer-location" name="volunteer_location" required placeholder="Ex: Serra Talhada, PE">
+                            </div>
+                        </fieldset>
+                         <fieldset>
+                            <legend>Disponibilidade e Habilidades</legend>
+                             <div class="form-group">
+                                <label for="volunteer-availability">Disponibilidade Semanal (horas aprox.):</label>
+                                <input type="number" id="volunteer-availability" name="availability_hours" min="1" step="1">
+                            </div>
+                             <div class="form-group checkbox-group">
+                                <span class="group-label">Áreas de Interesse/Habilidade:</span>
+                                 <input type="checkbox" id="skill-logistics" name="skills[]" value="logistics"><label for="skill-logistics"> Logística e Distribuição</label>
+                                 <input type="checkbox" id="skill-fundraising" name="skills[]" value="fundraising"><label for="skill-fundraising"> Captação de Recursos</label>
+                                 <input type="checkbox" id="skill-comms" name="skills[]" value="communications"><label for="skill-comms"> Comunicação e Mídias Sociais</label>
+                                 <input type="checkbox" id="skill-data" name="skills[]" value="data_analysis"><label for="skill-data"> Análise de Dados</label>
+                                 <input type="checkbox" id="skill-health" name="skills[]" value="health_nutrition"><label for="skill-health"> Saúde e Nutrição</label>
+                                 <input type="checkbox" id="skill-it" name="skills[]" value="it_support"><label for="skill-it"> Suporte de TI / Web</label>
+                                 <input type="checkbox" id="skill-local" name="skills[]" value="local_support"><label for="skill-local"> Apoio em Ações Locais</label>
+                             </div>
+                            <div class="form-group">
+                                <label for="volunteer-experience">Experiência Relevante (opcional):</label>
+                                <textarea id="volunteer-experience" name="volunteer_experience" rows="4"></textarea>
+                            </div>
+                         </fieldset>
+                         <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Enviar Inscrição de Voluntário</button>
+                        </div>
+                     </form>
+                </div>
+
+                <div id="panel-projects" class="action-panel" role="tabpanel" aria-labelledby="tab-projects" tabindex="-1" hidden>
+                    <h3>Explore e Apoie Projetos Ativos</h3>
+                     <p>Conheça as iniciativas em andamento e direcione seu apoio.</p>
+                     <div class="project-filters">
+                        <label for="project-filter-region">Filtrar por Região:</label>
+                        <select id="project-filter-region" name="project_region">
+                            <option value="all">Todas as Regiões</option>
+                             <option value="AFR-SAH">Sahel</option>
+                             <option value="ASIA-SE">Sudeste Asiático</option>
+                             <option value="LATAM-CA">América Central</option>
+                             </select>
+                         <label for="project-filter-type">Filtrar por Tipo:</label>
+                        <select id="project-filter-type" name="project_type">
+                             <option value="all">Todos os Tipos</option>
+                             <option value="emergency_relief">Ajuda Emergencial</option>
+                             <option value="school_feeding">Alimentação Escolar</option>
+                             <option value="agriculture_support">Apoio à Agricultura</option>
+                             <option value="nutrition_programs">Programas de Nutrição</option>
+                        </select>
+                     </div>
+                     <div class="project-list">
+                        <article class="project-card" data-project-id="PROJAFR05" data-region="AFR-SAH" data-type="agriculture_support">
+                            <figure class="project-image">
+                                <img src="/assets/images/project-locust.jpg" alt="Campo agrícola com nuvem de gafanhotos ao fundo">
+                            </figure>
+                             <div class="project-content">
+                                <header class="project-header">
+                                    <h4 class="project-title">Controle de Gafanhotos no Chifre da África</h4>
+                                    <span class="project-region-tag">Chifre da África</span>
+                                    <span class="project-type-tag">Apoio à Agricultura</span>
+                                </header>
+                                <p class="project-description">Apoio a comunidades locais com monitoramento e controle de pragas para proteger colheitas vitais.</p>
+                                <div class="project-progress">
+                                    <label for="projAFR05-progress">Progresso da Meta:</label>
+                                    <progress id="projAFR05-progress" max="100" value="75">75%</progress> <span>(75% de $500.000)</span>
+                                </div>
+                                <footer class="project-actions">
+                                    <a href="#donate?designation=PROJAFR05" class="btn btn-primary btn-sm">Apoiar Projeto</a>
+                                    <a href="#project-details?id=PROJAFR05" class="btn btn-secondary btn-sm">Ver Detalhes</a>
+                                </footer>
+                            </div>
+                         </article>
+                         <article class="project-card" data-project-id="PROJLATAM02" data-region="LATAM-CA" data-type="school_feeding">
+                             <figure class="project-image">
+                                <img src="/assets/images/project-school-meal.jpg" alt="Crianças sorrindo enquanto recebem refeição em uma escola">
+                            </figure>
+                             <div class="project-content">
+                                <header class="project-header">
+                                    <h4 class="project-title">Alimentação Escolar na América Central</h4>
+                                     <span class="project-region-tag">América Central</span>
+                                     <span class="project-type-tag">Alimentação Escolar</span>
+                                </header>
+                                <p class="project-description">Garantir refeições nutritivas diárias para crianças em escolas de áreas vulneráveis pós-desastre.</p>
+                                <div class="project-progress">
+                                     <label for="projLATAM02-progress">Progresso da Meta:</label>
+                                    <progress id="projLATAM02-progress" max="100" value="90">90%</progress> <span>(90% de $300.000)</span>
+                                </div>
+                                <footer class="project-actions">
+                                    <a href="#donate?designation=PROJLATAM02" class="btn btn-primary btn-sm">Apoiar Projeto</a>
+                                    <a href="#project-details?id=PROJLATAM02" class="btn btn-secondary btn-sm">Ver Detalhes</a>
+                                </footer>
+                             </div>
+                         </article>
+                         </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="logistics-coordination" class="main-section logistics-section" aria-labelledby="logistics-title" data-section-type="coordination">
+             <header class="section-header">
+                <h2 id="logistics-title" class="section-title">Coordenação Logística</h2>
+                <p class="section-subtitle">Monitoramento da cadeia de suprimentos, gestão de estoques e coordenação de transporte.</p>
+            </header>
+            <div class="logistics-content">
+                <p>Esta seção fornecerá ferramentas para parceiros logísticos e equipes internas gerenciarem o fluxo de ajuda humanitária.</p>
+                <div class="logistics-placeholder" style="border: 1px dashed #ccc; padding: 20px; text-align: center;">
+                    [Interface de Gerenciamento Logístico - A ser desenvolvida com JS/Backend]
+                </div>
+            </div>
+        </section>
+
+        <aside class="complementary-info" role="complementary">
+            <section id="about-sgcf" aria-labelledby="about-title">
+                <h2 id="about-title">Sobre o SGCF</h2>
+                <p>O Sistema Global de Combate à Fome (SGCF) é uma iniciativa colaborativa (fictícia) que visa integrar dados, coordenar esforços e mobilizar recursos para alcançar a Fome Zero (ODS 2).</p>
+                <details>
+                    <summary>Nossa Missão e Visão</summary>
+                    <p><strong>Missão:</strong> Erradicar a fome e garantir a segurança alimentar para todos, promovendo sistemas alimentares sustentáveis e resilientes.</p>
+                    <p><strong>Visão:</strong> Um mundo onde ninguém passe fome e todos tenham acesso a alimentos nutritivos e suficientes.</p>
+                </details>
+                 <nav aria-label="Links Rápidos Sobre">
+                     <ul>
+                        <li><a href="#our-partners">Nossos Parceiros</a></li>
+                        <li><a href="#our-impact">Nosso Impacto</a></li>
+                        <li><a href="#governance">Governança</a></li>
+                     </ul>
+                 </nav>
+            </section>
+             <section id="contact" aria-labelledby="contact-title">
+                <h2 id="contact-title">Contato</h2>
+                <address>
+                    <strong>Sede Global (Fictícia):</strong><br>
+                    1 Hunger Free Plaza<br>
+                    Genebra, Suíça<br>
+                     <abbr title="Telefone">Tel:</abbr> +41 22 123 4567<br>
+                     <abbr title="Email">Email:</abbr> <a href="mailto:info@sgcf-nao-real.org">info@sgcf-nao-real.org</a>
+                </address>
+                 <div class="social-media-links">
+                    <a href="#" aria-label="SGCF no Twitter"><svg></svg></a>
+                    <a href="#" aria-label="SGCF no Facebook"><svg></svg></a>
+                    <a href="#" aria-label="SGCF no LinkedIn"><svg></svg></a>
+                 </div>
+            </section>
+        </aside>
+
+    </main>
+
+    <footer class="site-footer" id="main-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="footer-container container-fluid">
+            <div class="footer-widgets-area">
+                <div class="footer-widget">
+                    <h4>Navegação Rápida</h4>
+                    <nav aria-label="Navegação do Rodapé">
+                        <ul class="footer-nav-menu">
+                             <li><a href="#dashboard">Painel</a></li>
+                             <li><a href="#data-hub">Dados</a></li>
+                             <li><a href="#action-center">Ação</a></li>
+                             <li><a href="#logistics-coordination">Logística</a></li>
+                             <li><a href="#about-sgcf">Sobre</a></li>
+                             <li><a href="#contact">Contato</a></li>
+                             <li><a href="/privacy-policy">Política de Privacidade</a></li>
+                             <li><a href="/terms-of-service">Termos de Serviço</a></li>
+                             <li><a href="/sitemap.xml">Mapa do Site</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer-widget">
+                    <h4>Assine nossa Newsletter</h4>
+                     <form id="newsletter-form-footer" action="/subscribe-newsletter" method="post">
+                        <label for="footer-newsletter-email" class="visually-hidden">Seu Email</label>
+                        <input type="email" id="footer-newsletter-email" name="email" placeholder="Seu Email" required>
+                        <button type="submit" class="btn btn-secondary btn-sm">Assinar</button>
+                    </form>
+                     <p><small>Receba atualizações sobre a luta contra a fome.</small></p>
+                </div>
+                 <div class="footer-widget">
+                    <h4>Organizações Parceiras Chave</h4>
+                    <ul class="partner-logos">
+                        <li><img src="/assets/logos/partner-fao.png" alt="Logo FAO" title="FAO"></li>
+                        <li><img src="/assets/logos/partner-wfp.png" alt="Logo WFP" title="World Food Programme"></li>
+                        <li><img src="/assets/logos/partner-who.png" alt="Logo WHO" title="World Health Organization"></li>
+                        </ul>
+                 </div>
+            </div>
+            <div class="footer-bottom">
+                 <p class="copyright">&copy; <time datetime="2025">2025</time> Sistema Global de Combate à Fome (SGCF) - Iniciativa Fictícia. Todos os direitos reservados.</p>
+                 <p class="attribution">Desenvolvido como um exercício de demonstração.</p>
+                 <p class="last-updated">Página gerada em: <span id="generation-time">[Será preenchido por JS]</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Pequeno script inline para funcionalidade básica (ex: toggle de menu mobile, tabs)
+        // Scripts mais complexos virão no arquivo JS principal
+        document.addEventListener('DOMContentLoaded', () => {
+            // Exemplo básico: Toggle de menu mobile (sem a complexidade total ainda)
+            const menuToggle = document.querySelector('.menu-toggle');
+            const primaryMenu = document.querySelector('#primary-menu');
+            if(menuToggle && primaryMenu) {
+                menuToggle.addEventListener('click', () => {
+                    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                    menuToggle.setAttribute('aria-expanded', !isExpanded);
+                    primaryMenu.style.display = isExpanded ? 'none' : 'block'; // Simplificado
+                });
+            }
+
+             // Exemplo básico: Troca de abas (simplificado)
+             const tabButtons = document.querySelectorAll('.action-tabs [role="tab"]');
+             const tabPanels = document.querySelectorAll('.action-panel[role="tabpanel"]');
+             tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Desativa todos
+                    tabButtons.forEach(btn => btn.setAttribute('aria-selected', 'false'));
+                    tabPanels.forEach(panel => { panel.hidden = true; panel.setAttribute('tabindex', '-1'); });
+                    // Ativa o clicado
+                    button.setAttribute('aria-selected', 'true');
+                    const controlledPanel = document.getElementById(button.getAttribute('aria-controls'));
+                    if(controlledPanel) {
+                         controlledPanel.hidden = false;
+                         controlledPanel.setAttribute('tabindex', '0');
+                    }
+                });
+             });
+        });
+    </script>
+
+</body>
+</html>
